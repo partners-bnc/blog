@@ -1,7 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
-:root { font-family:'DM Sans',sans-serif; color:#17384b; background:#fff; font-synthesis:none; text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased; }
-* { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body { margin:0; min-width:320px; }
-a { color:inherit; }
-button { font:inherit; }
+@import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Corben", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans: "Wix Madefor Text Variable", "Wix Madefor Text", sans-serif;
+  --font-display: "Wix Madefor Display Variable", "Wix Madefor Display", sans-serif;
+  --font-avenir: "Wix Madefor Text Variable", "Wix Madefor Text", sans-serif;
+}
+
+/* --- Global Typography Custom Rules (Visual Sync with Wix Live Site) --- */
+
+@layer base {
+  /* Reset all headings to Wix Madefor Display Variable by default (matches live site overrides) */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+
+  /* Sync body text family */
+  body {
+    font-family: var(--font-sans);
+  }
+}
